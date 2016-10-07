@@ -102,8 +102,7 @@ public class Deployer {
 		logger.debug("Deployables {}", properties.getDeployables());
 
 		for (Deployable deployable : deployables) {
-			deployInternal(deployer, resourceLoader, deployable,
-					properties, environment);
+			deployInternal(deployer, resourceLoader, deployable, properties, environment);
 		}
 
 		for (Deployable deployable : deployables) {

@@ -1,0 +1,23 @@
+logging:
+  level:
+    org.springframework.cloud.launcher.deployer: TRACE
+spring:
+  cloud:
+    launcher:
+      deployables:
+        source:
+          coordinates: maven://com.example:source:0.0.1-SNAPSHOT
+          port: 7000
+        sink:
+          coordinates: maven://com.example:sink:0.0.1-SNAPSHOT
+          port: 7001
+          properties:
+            JAVA_OPTS: -Xmx64m
+    deployer:
+      cloudfoundry:
+        password: ------
+        username: dsyer@gopivotal.com
+        space: dsyer
+        org: FrameworksAndRuntimes
+        url: https://api.run.pivotal.io
+        domain: cfapps.io
